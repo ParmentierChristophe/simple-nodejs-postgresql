@@ -8,6 +8,7 @@ This is a boilerplate to build a starting API with Node.js, Express and PostgreS
   - [Quick Start](#quick-start)
   - [Documentation](#documentation)
     - [Folder Structure](#folder-structure)
+      - [Folder database](#folder-database)
     - [Babel](#babel)
     - [Nodemon](#nodemon)
     - [Express](#express)
@@ -48,6 +49,16 @@ yarn dev (or npm run dev)
 ### Folder Structure
 
 the entrance of the application is `index.js`, on folder `database` All files created by Sequelize (migrations, seeds, models, config) and on folder `server` all files for API and for server (config, modules, controllers, middlewares).
+
+#### Folder Database
+
+In the database folder you already have two models and the migration files for creating two `Posts` and `Users` tables with a relationship. to create these tables, make with Sequelize:
+
+`sequelize db:migrate`
+
+You also seeds, make with Sequilize :
+
+`sequelize db:seed:all`
 
 ### Babel
 
