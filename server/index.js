@@ -1,19 +1,14 @@
-import express from 'express';
-import { UserRoutes, PostRoutes } from './modules';
-import middlewaresConfig from './config/middlewares';
+import Koa from 'koa';
 
-const app = express();
+import middlewaresConfig from './config/middlewares';
+import api from './api';
+
+const app = new Koa();
 middlewaresConfig(app);
 
-app.use('/api', [UserRoutes, PostRoutes]);
+app.use(api);
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, err => {
-  if (err) {
-    console.error(`👽Houston we have a problem : ${err} ☠️`);
-  }
-  {
-    console.log(`🎉 APP Listen to port: ${PORT} 🎉`);
-  }
-});
+app.on('error', (error) => console.error(`👽Houston we have a problem : ${error} ☠️`));
+app.listen(PORT, () => console.log(`🎉 APP Listen to port: ${PORT} 🎉`));

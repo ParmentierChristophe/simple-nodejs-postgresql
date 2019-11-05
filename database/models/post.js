@@ -1,20 +1,14 @@
-'use strict';
-module.exports = (sequelize, DataTypes) => {
-  const Post = sequelize.define(
-    'Post',
-    {
-      title: DataTypes.STRING,
-      content: DataTypes.TEXT,
-      userId: DataTypes.INTEGER
-    },
-    {}
-  );
-  Post.associate = function(models) {
-    // associations can be defined here
-    Post.belongsTo(models.User, {
-      foreignKey: 'userId',
-      as: 'author'
-    });
-  };
-  return Post;
-};
+module.exports = (sequelize, DataTypes) => sequelize.define('Post', {
+	title: DataTypes.STRING,
+	content: DataTypes.TEXT,
+	userId: DataTypes.INTEGER,
+}, {
+	classMethods: {
+		associate(models) {
+			models.Post.belongsTo(models.User, {
+				foreignKey: 'userId',
+				as: 'author',
+			});
+		},
+	},
+});
