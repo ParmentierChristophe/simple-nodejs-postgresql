@@ -1,0 +1,26 @@
+{
+  "projectName": "simple-nodejs-postgresql",
+  "projectOwner": "ParmentierChristophe",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "Plokkke",
+      "name": "Antoine Caron",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/51399514?v=4",
+      "profile": "https://github.com/Plokkke",
+      "contributions": [
+        "code",
+        "ideas",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
